@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  username  String    @unique
+  email     String    @unique
+  password  String
+  profile   Profile?
+  notes     Note[]
+  shares    Share[]
+}
+
+model Profile {
+  id       Int    @id @default(autoincrement())
+  userId   Int    @unique
+  user     User   @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  fullName String
+  bio      String?
+}
+
+model Book {
+  id        Int       @id @default(autoincrement())
+  title     String
+  author    String
+  isbn      String    @unique
+  shelfInfo String
+  notes     Note[]
+  cover     String?   // Kapak dosyası
+}
+
+model Note {
+  id        Int       @id @default(autoincrement())
+  content   String
+  isPublic  Boolean   @default(false)
+  userId    Int
+  bookId    Int
+  user      User      @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  book      Book      @relation(fields: [bookId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  shares    Share[]
+}
+
+model Share {
+  id        Int     @id @default(autoincrement())
+  noteId    Int
+  userId    Int
+  visibility String
+  note      Note    @relation(fields: [noteId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  user      User    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
