@@ -41,16 +41,91 @@ Bu proje, kullanıcıların kitapları yönetmesine, notlar eklemesine ve bu not
 
 
 
-### Adımlar
+### Amaç
 
-1. **Repository'yi Klonlayın:**
-   ```bash
-   git clone https://github.com/talha3755/kitaplik.git
-   cd REPOSITORY_NAME
+# Proje Özeti
 
-2. **Postman üzerinde sonuçlar ve Test Sonuçları bu dosyada mevcuttur:**
-   ```bash
-   kitap uygulaması
+Bu proje, kullanıcıların kitapları yönetebileceği, notlar alabileceği ve bu notları diğer kullanıcılarla paylaşabileceği bir web uygulamasıdır. Uygulama, kullanıcı yönetimi, kitap yönetimi, not alma sistemi ve paylaşım sistemi gibi ana özelliklere sahiptir.
+
+## Ana Özellikler
+
+### 1. Kullanıcı Yönetimi
+- **Kayıt (Register)**
+- **Giriş (Login)**
+- **Profil yönetimi**
+
+### 2. Kitap Yönetimi
+- **Kitap ekleme, düzenleme, silme**
+- **Detaylı raf yeri bilgisi girişi**
+- **Kitap arama ve filtreleme**
+
+### 3. Not Alma Sistemi
+- **Kitaplarla ilgili not ekleme, düzenleme, silme**
+- **Notları özel veya paylaşımlı olarak işaretleme**
+
+### 4. Paylaşım Sistemi
+- **Kitap notlarını diğer kullanıcılarla paylaşma**
+- **Paylaşım gizlilik ayarları (herkese açık, sadece arkadaşlar, özel)**
+
+## Teknik Gereksinimler
+
+1. **Node.js ve Express.js kullanarak RESTful API geliştirme**
+2. **MSSQL veritabanı kullanımı ve Prisma ORM entegrasyonu**
+3. **JWT tabanlı kimlik doğrulama ve yetkilendirme sistemi**
+4. **Dosya yükleme için multer veya benzeri bir middleware kullanımı (kitap kapakları için)**
+5. **Veritabanı ilişkilerinin doğru yönetimi (one-to-many, many-to-many)**
+6. **İş mantığının servis katmanında uygulanması**
+7. **Hata yönetimi ve loglama**
+8. **Birim testleri ve entegrasyon testleri**
+9. **API dokümantasyonu (Swagger/OpenAPI)**
+10. **Güvenlik önlemleri (input validasyonu, sanitizasyon, rate limiting)**
+
+## Kullanım
+
+1. **Kullanıcı Yönetimi:**
+    - Kullanıcılar, uygulamaya kayıt olabilir, giriş yapabilir ve profil bilgilerini yönetebilir.
+  
+2. **Kitap Yönetimi:**
+    - Kullanıcılar kitap ekleyebilir, düzenleyebilir ve silebilir. Ayrıca, kitapların raf yeri bilgilerini detaylı bir şekilde girebilir ve kitapları arayıp filtreleyebilir.
+  
+3. **Not Alma Sistemi:**
+    - Kullanıcılar, kitaplarla ilgili notlar ekleyebilir, düzenleyebilir ve silebilir. Notları özel veya paylaşımlı olarak işaretleyebilir.
+  
+4. **Paylaşım Sistemi:**
+    - Kullanıcılar, kitap notlarını diğer kullanıcılarla paylaşabilir ve paylaşım gizlilik ayarlarını (herkese açık, sadece arkadaşlar, özel) belirleyebilir.
+
+## Geliştirme
+
+1. **API Geliştirme:**
+    - Node.js ve Express.js kullanarak RESTful API geliştirilir.
+  
+2. **Veritabanı:**
+    - MSSQL veritabanı kullanılır ve Prisma ORM ile entegre edilir.
+  
+3. **Kimlik Doğrulama:**
+    - JWT tabanlı kimlik doğrulama ve yetkilendirme sistemi uygulanır.
+  
+4. **Dosya Yükleme:**
+    - Multer veya benzeri bir middleware kullanılarak dosya yükleme işlemleri gerçekleştirilir.
+  
+5. **Veritabanı İlişkileri:**
+    - One-to-many ve many-to-many ilişkileri doğru yönetilir.
+  
+6. **Servis Katmanı:**
+    - İş mantığı servis katmanında uygulanır.
+  
+7. **Hata Yönetimi:**
+    - Hata yönetimi ve loglama yapılır.
+  
+8. **Testler:**
+    - Birim testleri ve entegrasyon testleri yazılır.
+  
+9. **API Dokümantasyonu:**
+    - API dokümantasyonu Swagger/OpenAPI ile yapılır.
+  
+10. **Güvenlik:**
+    - Input validasyonu, sanitizasyon ve rate limiting gibi güvenlik önlemleri alınır.
+
 
 
 
